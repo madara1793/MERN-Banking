@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Navigation from '../components/Navbar/Navigation';
+import Landing from '../components/layout/Landing/Landing';
+
 class App extends Component {
   render() {
     return (
      <div>
-       <h1>Hello</h1>
+        <Navigation/>
+        <Landing/>
      </div>
     );
   }
