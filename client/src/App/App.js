@@ -47,13 +47,17 @@ class App extends Component {
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
 
-              <PrivateRoute component={Navigation}/>
-              <PrivateRoute component={Sidebar}/>
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard}/>
-                <PrivateRoute exact path="/converter" component={Converter}/>
-              </Switch>
 
+              <div className="d-flex flex-column" style={{backgroundColor: '#1e1e2f'}}>
+                  <PrivateRoute component={Navigation}/>
+                  <div className="d-flex flex-row">
+                    <PrivateRoute component={Sidebar}/>
+                    <Switch>
+                      <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                      <PrivateRoute exact path="/converter" component={Converter}/>
+                    </Switch>
+                  </div>
+              </div>
           </React.Fragment>
         </BrowserRouter>
     );
