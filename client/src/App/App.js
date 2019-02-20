@@ -10,7 +10,6 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navigation from '../components/Navigation/Navigation';
 
-
 import Converter from '../containers/Converter/Converter';
 import Transactions from '../containers/Transactions/Transactions';
 import store from '../store';

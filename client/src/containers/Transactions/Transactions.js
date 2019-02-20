@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import {Button} from 'reactstrap';
+import Modal from '../../components/Modal/Modal';
 
 export default class Transactions extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class Transactions extends Component {
            <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                    <Button className="mb-5" outline color="primary" size="lg">New Transfer</Button>
+                    <Modal/>
                     </div>
                 </div>
                 <div className="row">
