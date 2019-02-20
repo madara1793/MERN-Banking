@@ -50,8 +50,14 @@ const SidebarWrapper = styled.div`
     background-color: #1e8af8;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 6;
     .nav-list {
       list-style: none;
+      padding: 0;
+      margin: 0;
     }
     height: 100%;
     li {
