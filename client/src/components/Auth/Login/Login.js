@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
-import classnames from "classnames";
 class Login extends Component {
   constructor() {
     super();
@@ -16,12 +15,12 @@ class Login extends Component {
   componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/panel");
+      this.props.history.push("/dashboard");
     }
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push('/panel')// push user to dashboard when they login
+      this.props.history.push('/dashboard') // push user to dashboard when they login
     }
     if (nextProps.errors) {
       this.setState({
@@ -73,6 +72,7 @@ class Login extends Component {
                             type="email"
                           />
                         </div>
+                        <span className="red-text">{errors.email}</span>
                 </div>
                 <div className="form-group">
                         <div className="input-group">
@@ -91,6 +91,7 @@ class Login extends Component {
                             error={errors.password}
                           />
                         </div>
+                        <span className="red-text">{errors.password}</span>
                   </div>
                       <div className="form-group form-actions">
                         <button className="btn btn-sm btn-success" type="submit">Login</button>

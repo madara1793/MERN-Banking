@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Landing from '../components/layout/Landing/Landing';
 import Login from '../components/Auth/Login/Login';
 import Register from '../components/Auth/Register/Register';
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import Panel from "../components/Panel/Panel";
+import Dashboard from '../components/Panel/Dashboard';
 import store from '../store';
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -42,7 +43,10 @@ class App extends Component {
               <Route exact path="/" component={ Landing }/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
-              <PrivateRoute exact path="/panel" component={Panel} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+
           </React.Fragment>
         </BrowserRouter>
     );
