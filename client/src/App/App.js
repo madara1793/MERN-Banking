@@ -10,7 +10,9 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navigation from '../components/Navigation/Navigation';
 
+
 import Converter from '../containers/Converter/Converter';
+import Transactions from '../containers/Transactions/Transactions';
 import store from '../store';
 
 import jwt_decode from "jwt-decode";
@@ -37,7 +39,6 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
-
 class App extends Component {
   render() {
     return (
@@ -55,6 +56,7 @@ class App extends Component {
                     <Switch>
                       <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                       <PrivateRoute exact path="/converter" component={Converter}/>
+                      <PrivateRoute exact path="/transactions" component={Transactions}/>
                     </Switch>
                   </div>
               </div>

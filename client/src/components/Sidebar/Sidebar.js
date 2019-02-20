@@ -5,7 +5,7 @@ export default class Sidebar extends Component {
   render() {
     return (
       <SidebarWrapper>
-        <div className="sidebar d-flex flex-column justify-content-center">
+        <div className="sidebar d-flex flex-column justify-content-start">
             <ul className="nav-list">
                 <li className="nav-item py-3 px-3">
                     <NavLink className="nav-link" to="/dashboard">
@@ -19,12 +19,12 @@ export default class Sidebar extends Component {
                 </li>
                 <li className="nav-item py-3 px-3">
                     <NavLink className="nav-link" to="/transactions">
-                    <span><i class="fas fa-exchange-alt mr-2"></i></span>
+                    <span><i className="fas fa-exchange-alt mr-2"></i></span>
                     Transactions</NavLink>
                 </li>
                 <li className="nav-item py-3 px-3">
                     <NavLink className="nav-link" to="/converter">
-                    <span><i class="fas fa-pound-sign mr-2"></i></span>
+                    <span><i className="fas fa-pound-sign mr-2"></i></span>
                     Converter</NavLink>
                 </li>
                 <li className="nav-item py-3 px-3">
