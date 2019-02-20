@@ -6,7 +6,7 @@ import Landing from '../components/layout/Landing/Landing';
 import Login from '../components/Auth/Login/Login';
 import Register from '../components/Auth/Register/Register';
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import Dashboard from '../components/Panel/Dashboard';
+import Dashboard from '../components/Dashboard/Dashboard';
 import Sidebar from '../components/Sidebar/Sidebar';
 
 import Converter from '../containers/Converter/Converter';
@@ -46,10 +46,12 @@ class App extends Component {
               <Route exact path="/" component={ Landing }/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
+              <PrivateRoute component={Sidebar}/>
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                <PrivateRoute exact path="/converter" component={Converter}/>
+              </Switch>
 
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-
-              <PrivateRoute exact path="/converter" component={Sidebar}/>
           </React.Fragment>
         </BrowserRouter>
     );

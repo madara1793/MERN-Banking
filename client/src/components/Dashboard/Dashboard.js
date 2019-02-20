@@ -15,9 +15,21 @@ class Dashboard extends Component {
     return (
       <div className="container">
         <div className="row">
-                <button onClick={this.onLogoutClick}>Logout</button>
-         </div>
-      </div>
+         <h1>Hello {user.name.split(" ")[0]}</h1>
+            <button
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                marginTop: "1rem"
+              }}
+              onClick={this.onLogoutClick}
+              className="btn btn-primary"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
     );
   }
 }
