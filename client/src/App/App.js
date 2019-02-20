@@ -7,6 +7,9 @@ import Login from '../components/Auth/Login/Login';
 import Register from '../components/Auth/Register/Register';
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Dashboard from '../components/Panel/Dashboard';
+import Sidebar from '../components/Sidebar/Sidebar';
+
+import Converter from '../containers/Converter/Converter';
 import store from '../store';
 
 import jwt_decode from "jwt-decode";
@@ -43,10 +46,10 @@ class App extends Component {
               <Route exact path="/" component={ Landing }/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
 
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
+              <PrivateRoute exact path="/converter" component={Sidebar}/>
           </React.Fragment>
         </BrowserRouter>
     );
