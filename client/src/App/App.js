@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
-import Navigation from '../components/Navbar/Navigation';
 import Landing from '../components/layout/Landing/Landing';
 import Login from '../components/Auth/Login/Login';
 import Register from '../components/Auth/Register/Register';
@@ -24,7 +23,7 @@ if (localStorage.jwtToken) {
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
 
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -38,14 +37,14 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-     <div>
-            <Route exact path="/" component={ Landing }/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/register" component={Register}/>
-        <Switch>
-            <PrivateRoute exact path="/panel" component={Panel} />
-        </Switch>
-     </div>
+        <BrowserRouter>
+          <React.Fragment>
+              <Route exact path="/" component={ Landing }/>
+              <Route exact path="/login" component={Login}/>
+              <Route exact path="/register" component={Register}/>
+              <PrivateRoute exact path="/panel" component={Panel} />
+          </React.Fragment>
+        </BrowserRouter>
     );
   }
 }
