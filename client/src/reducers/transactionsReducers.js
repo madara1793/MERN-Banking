@@ -1,5 +1,5 @@
 import uuid from 'uuid';
-import { GET_TRANSACTIONS } from '../actions/types';
+import { GET_TRANSACTIONS, ADD_TRANSACTION } from '../actions/types';
 
 const initialState = {
     transactions: [
@@ -12,6 +12,10 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case GET_TRANSACTIONS:
+            return {
+                ...state
+            }
+        case ADD_TRANSACTION:
             return {
                 ...state
             }

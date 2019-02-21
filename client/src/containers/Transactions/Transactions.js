@@ -10,7 +10,7 @@ class Transactions extends Component {
     this.props.getTransactions();
   }
   render() {
-      const {transactions} = this.props.transaction.transactions;
+      const {transactions} = this.props.transaction;
     return (
       <div>
            <div className="container">
@@ -44,7 +44,9 @@ class Transactions extends Component {
                         <div className="card">
                                 <div className="card-body">
                                 <ListGroup>
-                                    <ListGroupItem>{transactions}</ListGroupItem>
+                                    {transactions.map(({name, id}) => (
+                                        <ListGroupItem key={id}>{name}</ListGroupItem>
+                                    ))}
                                 </ListGroup>
                                 </div>
                                 <div className="card-footer">
