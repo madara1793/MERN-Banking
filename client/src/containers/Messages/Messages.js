@@ -6,13 +6,12 @@ import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getMessages, addMessage } from '../../actions/messagesActions';
 import PropTypes from 'prop-types';
-import uuid from 'uuid';
+
 
 class Messages extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: uuid(),
             name: '',
             email: '',
             select: '',
@@ -26,19 +25,18 @@ class Messages extends Component {
     e.preventDefault();
 
     const newMessage = {
-        id: uuid(),
         name: this.state.name,
         email: this.state.email,
         select: this.state.select,
         message: this.state.message
     }
     this.props.addMessage(newMessage);
-    this.setState({
-        name: '',
-        email: '',
-        select: '',
-        message: ''
-    })
+    // this.setState({
+    //     name: '',
+    //     email: '',
+    //     select: '',
+    //     message: ''
+    // })
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value
