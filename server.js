@@ -5,6 +5,7 @@ const passport = require("passport");
 
 const users = require("./routes/api/users");
 const transactions = require("./routes/api/transactions");
+const messages = require("./routes/api/messages");
 
 const app = express();
 
@@ -36,6 +37,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/transactions", transactions);
+app.use("/api/messages", messages);
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 

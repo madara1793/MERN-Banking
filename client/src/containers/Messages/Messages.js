@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import { Button, Form, FormGroup, Input} from 'reactstrap';
 import { Card, CardBody, CardHeader, CardFooter } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
+import { connect } from 'react-redux';
+import { getMessages } from '../../actions/messagesActions';
 
-export default class Messages extends Component {
+class Messages extends Component {
+  componentDidMount() {
+    this.props.getMessages();
+  }
   render() {
+      const {messages} = this.props.message;
     return (
       <MessagesWrapper>
             <Container>
@@ -48,17 +54,25 @@ export default class Messages extends Component {
                 </Form>
                     </Col>
                     <Col md="6">
-                            <Card className="card">
+                    {messages.map(({name, id, email, subject, message}) => (
+                        <Card key={id} className="card">
                                 <CardHeader>
-                                    Message 1
+                                    {name}
                                 </CardHeader>
                                 <CardBody>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus id pariatur autem quibusdam omnis quia dolores expedita iure similique vel.
+                                    <ul>
+                                        <li>{message}</li>
+                                        <li>{email}</li>
+                                        <li>{subject}</li>
+                                    </ul>
+
                                 </CardBody>
                                 <CardFooter>
                                     2019/02/21
                                 </CardFooter>
-                            </Card>
+                        </Card>
+                    ))}
+
                     </Col>
                 </Row>
             </Container>
@@ -83,3 +97,9 @@ form {
     height: 8rem;
 }
 `;
+
+const mapStateToProps = state => ({
+    message: state.messages
+})
+
+export default connect(mapStateToProps, {getMessages})(Messages);
