@@ -44,8 +44,15 @@ class Transactions extends Component {
                         <div className="card">
                                 <div className="card-body">
                                 <ListGroup>
-                                    {transactions.map(({name, id}) => (
-                                        <ListGroupItem key={id}>{name}</ListGroupItem>
+                                    {transactions.map(({accountNumber, address, name, reference, amount, _id, date}) => (
+                                        <ListGroupItem key={_id}>
+                                         <p>{name}</p>
+                                         <p>{address}</p>
+                                         <p>{accountNumber}</p>
+                                         <p>{reference}</p>
+                                         <p>{amount}</p>
+                                         <p>{date}</p>
+                                        </ListGroupItem>
                                     ))}
                                 </ListGroup>
                                 </div>

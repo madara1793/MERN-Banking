@@ -9,3 +9,4 @@ export const GET_CURRENCIES = "GET_CURRENCIES";
 // Transactions constants
 export const GET_TRANSACTIONS = "GET_TRANSACTIONS";
 export const ADD_TRANSACTION = "ADD_TRANSACTION";
+export const TRANSACTIONS_LOADING = "TRANSACTIONS_LOADING";

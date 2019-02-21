@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 import {Form, FormGroup, Label, Input } from 'reactstrap';
 import {connect} from 'react-redux';
 import {addTransaction} from '../../actions/transactionsActions';
-import uuid from 'uuid';
 
 class ModalExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      accountnumber: null,
+      accountNumber: null,
       name: '',
       address: '',
       reference: '',
@@ -33,14 +32,12 @@ class ModalExample extends React.Component {
   onHandleSubmit = e => {
      e.preventDefault();
      let newTransaction = {
-        id: uuid(),
-        accountnumber: this.state.accountnumber,
+        accountNumber: this.state.accountNumber,
         name: this.state.name,
         address: this.state.address,
         reference: this.state.reference,
         amount: this.state.amount
      }
-
      // Add transaction
      this.props.addTransaction(newTransaction);
 
@@ -48,7 +45,7 @@ class ModalExample extends React.Component {
      this.toggle();
   }
   render() {
-    console.log(this.state)
+
     return (
       <div>
         <Button className="mb-3" color="primary" size="lg" onClick={this.toggle}>New Transfer</Button>
@@ -60,7 +57,7 @@ class ModalExample extends React.Component {
           <Label for="accountnumber">Recipient's account number</Label>
           <Input
             type="number"
-            name="accountnumber"
+            name="accountNumber"
             id="accountnumber"
             placeholder="Recipient's account number"
             onChange={this.onChange}
@@ -109,7 +106,7 @@ class ModalExample extends React.Component {
       </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Confirm Transfer</Button>{' '}
+            <Button color="primary" onClick={this.onHandleSubmit}>Confirm Transfer</Button>{' '}
           </ModalFooter>
         </Modal>
       </div>
@@ -152,7 +149,9 @@ Modal.propTypes = {
   }
 
 
+const mapStateToProps = state => ({
+  transaction: state.transactions
+})
 
 
-
-export default connect()(ModalExample);
+export default connect(mapStateToProps, {addTransaction})(ModalExample);

@@ -1,13 +1,26 @@
-import { GET_TRANSACTIONS, ADD_TRANSACTION} from './types';
+import axios from 'axios';
+import { GET_TRANSACTIONS, ADD_TRANSACTION, TRANSACTIONS_LOADING} from './types';
 
-export const getTransactions = () => {
-    return {
-        type: GET_TRANSACTIONS
-    }
+export const getTransactions = () => dispatch => {
+    dispatch(transactionsLoading());
+    axios
+        .get('/api/transactions')
+        .then(res => dispatch({
+            type: GET_TRANSACTIONS,
+            payload: res.data
+        }))
+}
+export const addTransaction = transaction => dispatch => {
+    axios
+        .post('/api/transactions', transaction)
+        .then(res => dispatch({
+            type: ADD_TRANSACTION,
+            payload: res.data
+        }))
 }
 
-export const addTransaction = () => {
+export const transactionsLoading = () => {
     return {
-        type: ADD_TRANSACTION
+        type: TRANSACTIONS_LOADING,
     }
 }
