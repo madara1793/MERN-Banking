@@ -13,5 +13,5 @@ export const TRANSACTIONS_LOADING = "TRANSACTIONS_LOADING";
 
 // Messages constants
 export const GET_MESSAGES = "GET_MESSAGES";
-export const ADD_MESSAGE = "ADDMESSAGES";
+export const ADD_MESSAGE = "ADD_MESSAGE";
 export const MESSAGES_LOADING = "MESSAGES_LOADING";

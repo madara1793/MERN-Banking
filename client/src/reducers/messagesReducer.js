@@ -1,17 +1,19 @@
 import {GET_MESSAGES, ADD_MESSAGE, MESSAGES_LOADING} from '../actions/types';
-
+import uuid from 'uuid';
 const initialState = {
     messages: [
         {
+            id: uuid(),
             name: "Kamil",
             email: "example@email.com",
-            subject: "subject 1",
+            select: "subject 1",
             message: "hello"
         },
         {
+            id: uuid(),
             name: "Jan",
             email: "example@email.com",
-            subject: "subject 3",
+            select: "subject 3",
             message: "GoodBye"
         },
     ],
@@ -30,7 +32,7 @@ export default function(state = initialState, action) {
         case ADD_MESSAGE:
             return {
                 ...state,
-                messages: action.payload
+                messages: [action.payload, ...state.messages]
             }
     }
 }

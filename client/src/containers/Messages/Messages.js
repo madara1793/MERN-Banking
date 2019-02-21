@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { Button, Form, FormGroup, Input} from 'reactstrap';
-import { Card, CardBody, CardHeader, CardFooter } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardFooter, ListGroupItem, ListGroup } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getMessages, addMessage } from '../../actions/messagesActions';
+import PropTypes from 'prop-types';
+import uuid from 'uuid';
 
 class Messages extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: uuid(),
             name: '',
             email: '',
-            subject: '',
+            select: '',
             message: ''
         };
     }
@@ -21,9 +24,25 @@ class Messages extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
+
+    const newMessage = {
+        id: uuid(),
+        name: this.state.name,
+        email: this.state.email,
+        select: this.state.select,
+        message: this.state.message
+    }
+    this.props.addMessage(newMessage);
+    this.setState({
+        name: '',
+        email: '',
+        select: '',
+        message: ''
+    })
   }
   onChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value
+    })
   }
   render() {
     const {messages} = this.props.message;
@@ -39,15 +58,17 @@ class Messages extends Component {
                             name="name"
                             id="name"
                             placeholder="Name"
+                            value={this.state.name}
                             onChange={this.onChange}
                         />
                     </FormGroup>
                     <FormGroup>
                         <Input
                             type="text"
-                            name="name"
-                            id="name"
+                            name="email"
+                            id="email"
                             placeholder="Email"
+                            value={this.state.email}
                             onChange={this.onChange}
                         />
                     </FormGroup>
@@ -56,6 +77,7 @@ class Messages extends Component {
                             type="select"
                             name="select"
                             id="select"
+                            value={this.state.select}
                             onChange={this.onChange}
                         >
                             <option>Subject 1</option>
@@ -70,6 +92,7 @@ class Messages extends Component {
                             name="message"
                             id="message"
                             placeholder="Message"
+                            value={this.state.message}
                             onChange={this.onChange}
                         />
                     </FormGroup>
@@ -77,25 +100,28 @@ class Messages extends Component {
                 </Form>
                     </Col>
                     <Col md="6">
-                    {messages.map(({name, id, email, subject, message}) => (
-                        <Card key={id} className="card">
-                                <CardHeader>
-                                    {name}
-                                </CardHeader>
-                                <CardBody>
-                                    <ul>
-                                        <li>{message}</li>
-                                        <li>{email}</li>
-                                        <li>{subject}</li>
-                                    </ul>
+                    <ListGroup>
+                        {messages.map(({name, id, email, select, message}) => (
+                            <ListGroupItem key={id}>
+                                <Card className="card">
+                                    <CardHeader>
+                                        {name}
+                                    </CardHeader>
+                                    <CardBody>
+                                        <ul>
+                                            <li>{message}</li>
+                                            <li>{email}</li>
+                                            <li>{select}</li>
+                                        </ul>
 
-                                </CardBody>
-                                <CardFooter>
-                                    2019/02/21
-                                </CardFooter>
-                        </Card>
-                    ))}
-
+                                    </CardBody>
+                                    <CardFooter>
+                                        2019/02/21
+                                    </CardFooter>
+                                </Card>
+                            </ListGroupItem>
+                        ))}
+                    </ListGroup>
                     </Col>
                 </Row>
             </Container>
@@ -120,6 +146,12 @@ form {
     height: 8rem;
 }
 `;
+
+Messages.propTypes = {
+    getMessages: PropTypes.func.isRequired,
+    addMessage: PropTypes.func.isRequired,
+    message: PropTypes.object.isRequired
+}
 
 const mapStateToProps = state => ({
     message: state.messages
