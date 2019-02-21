@@ -27,5 +27,10 @@ export default function(state = initialState, action) {
             }
         default:
             return state;
+        case ADD_MESSAGE:
+            return {
+                ...state,
+                messages: action.payload
+            }
     }
 }

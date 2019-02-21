@@ -6,3 +6,10 @@ export const getMessages = () => {
         type: GET_MESSAGES
     }
 }
+
+export const addMessage = (message) => {
+    return {
+        type: ADD_MESSAGE,
+        payload: message
+    }
+}

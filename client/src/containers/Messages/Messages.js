@@ -4,14 +4,29 @@ import { Button, Form, FormGroup, Input} from 'reactstrap';
 import { Card, CardBody, CardHeader, CardFooter } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import { getMessages } from '../../actions/messagesActions';
+import { getMessages, addMessage } from '../../actions/messagesActions';
 
 class Messages extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        };
+    }
   componentDidMount() {
     this.props.getMessages();
   }
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
+  onChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  }
   render() {
-      const {messages} = this.props.message;
+    const {messages} = this.props.message;
     return (
       <MessagesWrapper>
             <Container>
@@ -24,6 +39,7 @@ class Messages extends Component {
                             name="name"
                             id="name"
                             placeholder="Name"
+                            onChange={this.onChange}
                         />
                     </FormGroup>
                     <FormGroup>
@@ -32,15 +48,21 @@ class Messages extends Component {
                             name="name"
                             id="name"
                             placeholder="Email"
+                            onChange={this.onChange}
                         />
                     </FormGroup>
                     <FormGroup>
-                    <Input type="select" name="select" id="select">
-                        <option>Subject 1</option>
-                        <option>Subject 2</option>
-                        <option>Subject 3</option>
-                        <option>Subject 4</option>
-                    </Input>
+                        <Input
+                            type="select"
+                            name="select"
+                            id="select"
+                            onChange={this.onChange}
+                        >
+                            <option>Subject 1</option>
+                            <option>Subject 2</option>
+                            <option>Subject 3</option>
+                            <option>Subject 4</option>
+                        </Input>
                     </FormGroup>
                     <FormGroup>
                         <Input
@@ -48,9 +70,10 @@ class Messages extends Component {
                             name="message"
                             id="message"
                             placeholder="Message"
+                            onChange={this.onChange}
                         />
                     </FormGroup>
-                    <Button color="primary">Send Message</Button>
+                    <Button onClick={this.handleSubmit} color="primary">Send Message</Button>
                 </Form>
                     </Col>
                     <Col md="6">
@@ -102,4 +125,4 @@ const mapStateToProps = state => ({
     message: state.messages
 })
 
-export default connect(mapStateToProps, {getMessages})(Messages);
+export default connect(mapStateToProps, {getMessages, addMessage})(Messages);
