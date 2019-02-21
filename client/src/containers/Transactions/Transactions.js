@@ -38,7 +38,7 @@ class Transactions extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <h1 className="text-white my-3">History of your transactions</h1>
+                        <h1 className="text-white my-3 text-center">History of your transactions</h1>
                     </div>
                     <div className="col-md-12">
                         <div className="card">
@@ -76,6 +76,8 @@ Transactions.propTypes = {
 const mapStateToProps = (state) => ({
     transaction: state.transactions
 });
+
+
 
 
 export default connect(mapStateToProps, {getTransactions})(Transactions);
