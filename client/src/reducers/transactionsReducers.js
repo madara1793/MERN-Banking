@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import { GET_TRANSACTIONS, ADD_TRANSACTION, TRANSACTIONS_LOADING } from '../actions/types';
 
 const initialState = {

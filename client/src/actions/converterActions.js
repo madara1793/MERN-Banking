@@ -1,10 +1,6 @@
 import axios from "axios";
 import {GET_CURRENCIES} from './types';
 
-
-const url = `https://api.exchangeratesapi.io/latest`;
-
-
 function requestCurrencies(payload) {
     return {
       type: GET_CURRENCIES,
