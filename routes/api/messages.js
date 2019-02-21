@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     const newMessage = new Message({
         name: req.body.name,
         email: req.body.email,
-        subject: req.body.subject,
+        select: req.body.select,
         message: req.body.message
     })
     newMessage

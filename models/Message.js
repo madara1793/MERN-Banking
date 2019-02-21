@@ -10,7 +10,7 @@ const MessageSchema = new Schema({
         type: String,
         required: true
     },
-    subject: {
+    select: {
         type: String,
         required: true
     },
