@@ -8,12 +8,7 @@ import uuid from 'uuid';
 export default class Transactions extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            transactions: [
-                {id: uuid(), accountNumber: 123456, name: "Kamil", address: "bg70", reference: "payment", amount: 5000},
-                {id: uuid(), accountNumber: 654321, name: "Kamil", address: "jbl", reference: "payment", amount: 3000}
-            ]
-        }
+        this.state = {}
     }
   render() {
     return (
@@ -49,9 +44,7 @@ export default class Transactions extends Component {
                         <div className="card">
                                 <div className="card-body">
                                 <ListGroup>
-                                    {this.state.transactions.map(({id, name}) => (
-                                        <ListGroupItem key={id}>{name}</ListGroupItem>
-                                    ))}
+
                                 </ListGroup>
                                 </div>
                                 <div className="card-footer">
