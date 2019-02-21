@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
 import Modal from '../../components/Modal/Modal';
-import uuid from 'uuid';
+import { connect } from 'react-redux';
+import { getTransactions } from '../../actions/transactionsActions';
+import PropTypes from 'prop-types';
 
-export default class Transactions extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+class Transactions extends Component {
+  componentDidMount() {
+    this.props.getTransactions();
+  }
   render() {
+      const {transactions} = this.props.transaction.transactions;
     return (
       <div>
            <div className="container">
@@ -44,7 +44,7 @@ export default class Transactions extends Component {
                         <div className="card">
                                 <div className="card-body">
                                 <ListGroup>
-
+                                    <ListGroupItem>{transactions}</ListGroupItem>
                                 </ListGroup>
                                 </div>
                                 <div className="card-footer">
@@ -58,3 +58,15 @@ export default class Transactions extends Component {
     )
   }
 }
+
+Transactions.propTypes = {
+    getTransactions: PropTypes.func.isRequired,
+    transaction: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    transaction: state.transactions
+});
+
+
+export default connect(mapStateToProps, {getTransactions})(Transactions);

@@ -1,9 +1,10 @@
 import uuid from 'uuid';
-import { GET_TRANSACTIONS, ADD_TRANSACTION} from '../actions/types';
+import { GET_TRANSACTIONS } from '../actions/types';
+
 const initialState = {
     transactions: [
         {id: uuid(), accountNumber: 123456, name: "Kamil", address: "bg70", reference: "payment", amount: 5000},
-        {id: uuid(), accountNumber: 654321, name: "Kamil", address: "jbl", reference: "payment", amount: 3000}
+        {id: uuid(), accountNumber: 654321, name: "John", address: "jbl", reference: "payment", amount: 3000}
     ]
 }
 
