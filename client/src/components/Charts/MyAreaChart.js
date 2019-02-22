@@ -22,7 +22,7 @@ const MyAreaChart = () => {
         <ChartWrapper>
             <div className="chart-wrapper">
                 <div className="header-wrapper">
-                    <h6 className="header text-white">Account income summary</h6>
+                    <h6 className="header text-white">Account Summary</h6>
                 </div>
                 <ResponsiveContainer width="95%" height="90%">
                     <LineChart

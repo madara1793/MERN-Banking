@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container, Row, Col } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import SaveIcon from '@material-ui/icons/Save';
 
 export default function Account() {
   return (
@@ -130,6 +131,14 @@ export default function Account() {
                                 </Col>
                             </FormGroup>
                         </Form>
+                    </Col>
+                </Row>
+                <Row className="my-5">
+                    <Col md="12">
+                        <Button color="primary" size="lg">
+                            <SaveIcon className="mr-2" />
+                            Save Changes
+                        </Button>
                     </Col>
                 </Row>
             </Container>

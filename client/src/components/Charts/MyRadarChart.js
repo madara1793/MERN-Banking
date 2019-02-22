@@ -27,7 +27,7 @@ const MyRadarChart = () => {
     <ChartWrapper>
       <div className="chart-wrapper">
       <div className="header-wrapper">
-          <h6 className="header text-white">Expenses detail summary</h6>
+          <h6 className="header text-white">Expenses Detail Summary</h6>
       </div>
       <ResponsiveContainer width="100%" height="100%">
           <RadarChart cx={270} cy={190} outerRadius={100} width={100} height={150} data={data}>

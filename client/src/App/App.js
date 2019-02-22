@@ -11,6 +11,7 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import Navigation from '../components/Navigation/Navigation';
 import PageNotFound from '../components/PageNotFound/PageNotFound';
 import Account from '../components/Account/Account';
+import Settings from '../components/Settings/Settings';
 
 import Converter from '../containers/Converter/Converter';
 import Transactions from '../containers/Transactions/Transactions';
@@ -20,6 +21,7 @@ import store from '../store';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -56,8 +58,9 @@ class App extends Component {
                     <Switch>
                       <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                       <PrivateRoute exact path="/account" component={Account}/>
-                      <PrivateRoute exact path="/converter" component={Converter}/>
                       <PrivateRoute exact path="/transactions" component={Transactions}/>
+                      <PrivateRoute exact path="/converter" component={Converter}/>
+                      <PrivateRoute exact path="/settings" component={Settings}/>
                       <PrivateRoute exact path="/messages" component={Messages}/>
                     </Switch>
                   </div>

@@ -28,7 +28,7 @@ const MyPieChart = () => {
       <ChartWrapper>
         <div className="chart-wrapper">
             <div className="header-wrapper">
-                <h6 className="header text-white">Income detail summary</h6>
+                <h6 className="header text-white">Income Detail Summary</h6>
             </div>
             <PieChart width={500} height={500}>
                     <Legend
