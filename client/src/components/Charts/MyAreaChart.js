@@ -45,10 +45,22 @@ const MyAreaChart = () => {
                             strokeDasharray="3 3"
                         />
                         <Tooltip />
+                        <Legend
+                            verticalAlign="top"
+                            horizontalAlign="left"
+                            height={50}
+                            width={200}
+                        />
                         <Line
                             type="monotone"
                             dataKey="Income"
                             stroke="#3DC4C7"
+                            strokeWidth={3}
+                        />
+                        <Line
+                            type="monotone"
+                            dataKey="Expenses"
+                            stroke="#AE0F0F"
                             strokeWidth={3}
                              />
                     </LineChart>

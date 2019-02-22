@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
               <div className="mb-5">
                 <MyAreaChart/>
               </div>
-              <div className="d-flex flex-row justify-content-between mt-3">
+                <div className="d-flex flex-row justify-content-between my-5">
                 <MyPieChart/>
                 <MyRadarChart/>
               </div>

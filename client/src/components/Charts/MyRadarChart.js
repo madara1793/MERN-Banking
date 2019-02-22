@@ -1,26 +1,26 @@
 import React from 'react'
-import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts';
+import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Legend} from 'recharts';
 import styled from 'styled-components';
 
 const MyRadarChart = () => {
     const data = [
         {
-          subject: 'Math', A: 120, B: 110, fullMark: 150,
+          subject: 'Housing', A: 120, B: 110, fullMark: 100,
         },
         {
-          subject: 'Chinese', A: 98, B: 130, fullMark: 150,
+          subject: 'Transportation', A: 98, B: 130, fullMark: 100,
         },
         {
-          subject: 'English', A: 86, B: 130, fullMark: 150,
+          subject: 'Food', A: 86, B: 130, fullMark: 100,
         },
         {
-          subject: 'Geography', A: 99, B: 100, fullMark: 150,
+          subject: 'Debt Payments', A: 99, B: 100, fullMark: 100,
         },
         {
-          subject: 'Physics', A: 85, B: 90, fullMark: 150,
+          subject: 'Savings', A: 85, B: 90, fullMark: 100,
         },
         {
-          subject: 'History', A: 65, B: 85, fullMark: 150,
+          subject: 'Personal & Discretionary', A: 65, B: 85, fullMark: 100,
         },
       ];
   return (
@@ -30,11 +30,25 @@ const MyRadarChart = () => {
           <h6 className="header text-white">Expenses detail summary</h6>
       </div>
       <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx={300} cy={250} outerRadius={150} width={300} height={250} data={data}>
+          <RadarChart cx={270} cy={190} outerRadius={100} width={100} height={150} data={data}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
-                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Legend
+                    verticalAlign="top"
+                    horizontalAlign="left"
+                    height={50}
+                    width={200}
+                    iconSize={20}
+                    iconType="rect"
+                />
+                <Radar
+                    name="Expenses"
+                    dataKey="A"
+                    stroke="#F6144D"
+                    strokeWidth={3}
+                    fill="#725e6c"
+                    fillOpacity={0.7} />
             </RadarChart>
       </ResponsiveContainer>
       </div>
@@ -45,7 +59,7 @@ const MyRadarChart = () => {
 const ChartWrapper = styled.div`
 margin-left: 2rem;
 .chart-wrapper {
-    width: 30rem;
+    width: 33rem;
     height: 25rem;
     background-color: #3a4149;
     border: 1px solid #000;

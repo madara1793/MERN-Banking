@@ -1,5 +1,5 @@
 import React from 'react';
-import {PieChart, Pie, Sector, Cell} from 'recharts';
+import {PieChart, Pie, Legend, Cell} from 'recharts';
 import styled from 'styled-components';
 
 const data = [
@@ -27,16 +27,27 @@ const MyPieChart = () => {
   return (
       <ChartWrapper>
         <div className="chart-wrapper">
+            <div className="header-wrapper">
+                <h6 className="header text-white">Income detail summary</h6>
+            </div>
             <PieChart width={500} height={500}>
+                    <Legend
+                        verticalAlign="top"
+                        horizontalAlign="left"
+                        height={50}
+                        width={200}
+                        iconSize={20}
+                        iconType="rect"
+                    />
                     <Pie
-                    data={data}
-                    cx={200}
-                    cy={200}
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
+                        data={data}
+                        cx={250}
+                        cy={140}
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={120}
+                        fill="#8884d8"
+                        dataKey="value"
                     >
                     {
                         data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
@@ -52,10 +63,19 @@ const MyPieChart = () => {
 const ChartWrapper = styled.div`
 margin-left: 2rem;
 .chart-wrapper {
-    width: 20rem;
+    width: 33rem;
     height: 25rem;
     background-color: #3a4149;
     border: 1px solid #000;
+}
+.header-wrapper {
+    background-color: #343b41;
+    border-bottom: 1px solid #000;
+}
+.header {
+    text-align: left;
+    font-family: 'Open Sans';
+    padding: 1.3rem 1rem 1rem 1rem;
 }
 `;
 
