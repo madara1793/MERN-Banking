@@ -9,6 +9,7 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Dashboard from '../components/Dashboard/Dashboard';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navigation from '../components/Navigation/Navigation';
+import PageNotFound from '../components/PageNotFound/PageNotFound';
 
 import Converter from '../containers/Converter/Converter';
 import Transactions from '../containers/Transactions/Transactions';
@@ -48,9 +49,7 @@ class App extends Component {
               <Route exact path="/" component={ Landing }/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
-
-
-              <div className="d-flex flex-column" style={{backgroundColor: '#2f353a'}}>
+              <div style={{backgroundColor: '#2f353a'}}>
                   <PrivateRoute component={Navigation}/>
                   <div className="d-flex flex-row align-items-start justify-content-start">
                     <PrivateRoute component={Sidebar}/>

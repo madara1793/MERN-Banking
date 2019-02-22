@@ -49,7 +49,7 @@ class Login extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 offset-3">
-            <div className="card mx-auto">
+            <div className="card mx-auto my-5">
                   <div className="card-header">
                         <h1>Login</h1>
                   </div>
