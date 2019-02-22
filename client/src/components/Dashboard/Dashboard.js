@@ -1,11 +1,18 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
+import MyAreaChart from '../Charts/MyAreaChart';
 
 export default class Dashboard extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello from Dashboard</h1>
-      </div>
+      <PanelWrapper>
+        <MyAreaChart/>
+      </PanelWrapper>
     );
   }
 }
+
+const PanelWrapper = styled.div`
+
+
+`;

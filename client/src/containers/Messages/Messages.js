@@ -31,12 +31,12 @@ class Messages extends Component {
         message: this.state.message
     }
     this.props.addMessage(newMessage);
-    // this.setState({
-    //     name: '',
-    //     email: '',
-    //     select: '',
-    //     message: ''
-    // })
+    this.setState({
+        name: '',
+        email: '',
+        select: '',
+        message: ''
+    })
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value
