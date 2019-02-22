@@ -17,6 +17,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Search from '../Modal/Search';
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
@@ -49,9 +50,7 @@ class Navigation extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                    <Button color="transparent">
-                        <i style={{color: '#fff'}} className="fa fa-search"></i>
-                    </Button>
+                    <Search/>
               </NavItem>
               <NavItem>
                     <Button color="transparent">
