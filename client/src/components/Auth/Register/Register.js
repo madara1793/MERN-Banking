@@ -50,7 +50,7 @@ class Register extends Component {
   return (
         <div className="container">
              <div className="row">
-            <div className="col-md-6 offset-3">
+            <div className="col-md-6 offset-3 my-5">
               <div className="card">
                   <div className="card-header">
                       <h1>Register</h1>
