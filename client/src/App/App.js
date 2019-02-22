@@ -50,7 +50,7 @@ class App extends Component {
               <Route exact path="/register" component={Register}/>
 
 
-              <div className="d-flex flex-column" style={{backgroundColor: '#2f353a', width: '100%', height: 'auto'}}>
+              <div className="d-flex flex-column" style={{backgroundColor: '#2f353a'}}>
                   <PrivateRoute component={Navigation}/>
                   <div className="d-flex flex-row align-items-start justify-content-start">
                     <PrivateRoute component={Sidebar}/>
