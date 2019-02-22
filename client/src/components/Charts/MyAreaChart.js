@@ -31,7 +31,7 @@ const MyAreaChart = () => {
     return(
         <ChartWrapper>
             <div className="chart-wrapper">
-                <h6 className="header">Income/Expense change stats - 1 year</h6>
+                <h6 className="header text-whitr">Income/Expense change stats - 1 year</h6>
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                             data={data}
@@ -39,7 +39,7 @@ const MyAreaChart = () => {
 
                         <XAxis
                             dataKey="date"
-                            fontFamily="sans-serif"
+                            fontFamily="Open Sans"
                             fontSize="14"
                         />
                         <YAxis
@@ -48,11 +48,11 @@ const MyAreaChart = () => {
                         />
                         <CartesianGrid
                             vertical={false}
-                            stroke="#ebf3f0"
+                            stroke="#3a4149"
                         />
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
-                        <Area type="monotone" dataKey="Income" stroke="#016b0f" fill='#9bffaf' />
+                        <Area type="monotone" dataKey="Income" stroke="#20a8d8" fill='rgba(117, 207, 234, 0.6)' />
                         <Area type="monotone" dataKey="Expenses" stroke="#a80101" fill='#ff7a7a' />
                     </AreaChart>
                 </ResponsiveContainer>
@@ -63,11 +63,12 @@ const MyAreaChart = () => {
 }
 
 const ChartWrapper = styled.div`
+margin-left: 2rem;
 .chart-wrapper {
-    width: 30rem;
-    height: 20rem;
-    background-color: #fff;
-    box-shadow: 5px 5px 10px #333;
+    width: 70rem;
+    height: 25rem;
+    background-color: #3a4149;
+    border: 1px solid #000;
 }
 .header {
     text-align: center;
