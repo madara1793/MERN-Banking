@@ -26,6 +26,9 @@ const MyRadarChart = () => {
   return (
     <ChartWrapper>
       <div className="chart-wrapper">
+      <div className="header-wrapper">
+          <h6 className="header text-white">Expenses detail summary</h6>
+      </div>
       <ResponsiveContainer width="100%" height="100%">
           <RadarChart cx={300} cy={250} outerRadius={150} width={300} height={250} data={data}>
                 <PolarGrid />
@@ -46,6 +49,16 @@ margin-left: 2rem;
     height: 25rem;
     background-color: #3a4149;
     border: 1px solid #000;
+}
+.header-wrapper {
+  background-color: #343b41;
+  border-bottom: 1px solid #000;
+}
+.header {
+  text-align: left;
+  font-family: 'Open Sans';
+  padding: 1.3rem 1rem 1rem 1rem;
+
 }
 `;
 

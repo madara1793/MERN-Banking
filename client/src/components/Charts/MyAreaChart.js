@@ -21,7 +21,9 @@ const MyAreaChart = () => {
     return(
         <ChartWrapper>
             <div className="chart-wrapper">
-                <h6 className="header text-white">Account summary</h6>
+                <div className="header-wrapper">
+                    <h6 className="header text-white">Account income summary</h6>
+                </div>
                 <ResponsiveContainer width="95%" height="90%">
                     <LineChart
                             data={data}
@@ -40,13 +42,9 @@ const MyAreaChart = () => {
                         <CartesianGrid
                             vertical={false}
                             stroke="#333333"
+                            strokeDasharray="3 3"
                         />
                         <Tooltip />
-                        <Legend
-                            verticalAlign="top"
-                            height={36}
-                            fontSize="14"
-                            color="#fff" />
                         <Line
                             type="monotone"
                             dataKey="Income"
@@ -73,7 +71,12 @@ margin-left: 2rem;
 .header {
     text-align: left;
     font-family: 'Open Sans';
-    padding: 1rem;
+    padding: 1.3rem 1rem 1rem 1rem;
+
+}
+.header-wrapper {
+    background-color: #343b41;
+    border-bottom: 1px solid #000;
 }
 `;
 

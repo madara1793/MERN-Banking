@@ -9,8 +9,10 @@ export default class Dashboard extends Component {
     return (
       <React.Fragment>
           <PanelWrapper>
-              <MyAreaChart/>
-              <div className="d-flex flex-row justify-content-between">
+              <div className="mb-5">
+                <MyAreaChart/>
+              </div>
+              <div className="d-flex flex-row justify-content-between mt-3">
                 <MyPieChart/>
                 <MyRadarChart/>
               </div>
