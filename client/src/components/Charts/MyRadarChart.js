@@ -27,7 +27,7 @@ const MyRadarChart = () => {
     <ChartWrapper>
       <div className="chart-wrapper">
       <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx={300} cy={250} outerRadius={150} width={300} height={300} data={data}>
+          <RadarChart cx={300} cy={250} outerRadius={150} width={300} height={250} data={data}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
@@ -42,7 +42,7 @@ const MyRadarChart = () => {
 const ChartWrapper = styled.div`
 margin-left: 2rem;
 .chart-wrapper {
-    width: 35rem;
+    width: 30rem;
     height: 25rem;
     background-color: #3a4149;
     border: 1px solid #000;

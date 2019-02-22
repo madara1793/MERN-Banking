@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-     AreaChart,
-     ResponsiveContainer,
-     Area,
-     XAxis,
-     YAxis,
-     CartesianGrid,
-     Tooltip,
-     Legend
-     }
-     from 'recharts';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend} from 'recharts';
 import styled from 'styled-components';
 const MyAreaChart = () => {
 
@@ -31,9 +21,9 @@ const MyAreaChart = () => {
     return(
         <ChartWrapper>
             <div className="chart-wrapper">
-                <h6 className="header text-whitr">Income/Expense change stats - 1 year</h6>
-                <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart
+                <h6 className="header text-white">Account summary</h6>
+                <ResponsiveContainer width="95%" height="90%">
+                    <LineChart
                             data={data}
                             margin={{top: 25, right: 25, left: 25, bottom: 25}}>
 
@@ -43,18 +33,27 @@ const MyAreaChart = () => {
                             fontSize="14"
                         />
                         <YAxis
-                        dataKey="y"
-                        fontSize="14"
+                            dataKey="y"
+                            fontSize="14"
+                            fontFamily="Open Sans"
                         />
                         <CartesianGrid
                             vertical={false}
-                            stroke="#3a4149"
+                            stroke="#333333"
                         />
                         <Tooltip />
-                        <Legend verticalAlign="top" height={36} />
-                        <Area type="monotone" dataKey="Income" stroke="#20a8d8" fill='rgba(117, 207, 234, 0.6)' />
-                        <Area type="monotone" dataKey="Expenses" stroke="#a80101" fill='#ff7a7a' />
-                    </AreaChart>
+                        <Legend
+                            verticalAlign="top"
+                            height={36}
+                            fontSize="14"
+                            color="#fff" />
+                        <Line
+                            type="monotone"
+                            dataKey="Income"
+                            stroke="#3DC4C7"
+                            strokeWidth={3}
+                             />
+                    </LineChart>
                 </ResponsiveContainer>
             </div>
         </ChartWrapper>
@@ -63,6 +62,7 @@ const MyAreaChart = () => {
 }
 
 const ChartWrapper = styled.div`
+
 margin-left: 2rem;
 .chart-wrapper {
     width: 70rem;
@@ -71,7 +71,9 @@ margin-left: 2rem;
     border: 1px solid #000;
 }
 .header {
-    text-align: center;
+    text-align: left;
+    font-family: 'Open Sans';
+    padding: 1rem;
 }
 `;
 
