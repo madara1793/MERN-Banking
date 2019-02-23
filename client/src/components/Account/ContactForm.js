@@ -10,12 +10,13 @@ const ContactForm = (props) => {
         <Col md="6">
             <Form>
                 <FormGroup row>
-                <Label className="text-white" for="name" sm={3}>Email</Label>
+                <Label className="text-white" for="email" sm={3}>Email</Label>
                     <Col sm={9}>
                         <Input
-                            type="text"
-                            name="name"
-                            id="name"
+                            type="email"
+                            name="email"
+                            id="email"
+                            value={props.auth.user.email}
                         />
                     </Col>
                 </FormGroup>
@@ -26,7 +27,6 @@ const ContactForm = (props) => {
                             type="text"
                             name="name"
                             id="name"
-                            value={props.auth.user.email}
                         />
                     </Col>
                 </FormGroup>

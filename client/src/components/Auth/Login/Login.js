@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Form, FormGroup, InputGroup, Input, Button} from 'reactstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
@@ -54,49 +55,49 @@ class Login extends Component {
                         <h1>Login</h1>
                   </div>
                   <div className="card-body">
-                  <form noValidate onSubmit={this.onSubmit}>
-                <div className="form-group">
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text">
-                              <i className="fa fa-envelope"></i>
-                            </span>
-                          </div>
-                          <input
-                            className="form-control"
-                            placeholder="Email"
-                            onChange={this.onChange}
-                            value={this.state.email}
-                            error={errors.email}
-                            id="email"
-                            type="email"
-                          />
-                        </div>
-                        <span className="red-text">{errors.email}</span>
-                </div>
-                <div className="form-group">
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text">
-                              <i className="fa fa-asterisk"></i>
-                            </span>
-                          </div>
-                          <input
-                            className="form-control"
-                            id="password" type="password"
-                            name="password"
-                            placeholder="Password"
-                            onChange={this.onChange}
-                            value={this.state.password}
-                            error={errors.password}
-                          />
-                        </div>
-                        <span className="red-text">{errors.password}</span>
+                  <Form noValidate onSubmit={this.onSubmit}>
+              <FormGroup>
+                <InputGroup>
+                  <div className="input-group-prepend">
+                    <span className="input-group-text">
+                      <i className="fa fa-envelope"></i>
+                    </span>
                   </div>
-                      <div className="form-group form-actions">
-                        <button className="btn btn-sm btn-success" type="submit">Login</button>
-                      </div>
-                  </form>
+                  <Input
+                    className="form-control"
+                    placeholder="Email"
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    type="email"
+                  />
+                </InputGroup>
+                <span className="red-text">{errors.email}</span>
+            </FormGroup>
+            <FormGroup>
+                <InputGroup>
+                  <div className="input-group-prepend">
+                    <span className="input-group-text">
+                      <i className="fa fa-asterisk"></i>
+                    </span>
+                  </div>
+                  <Input
+                    className="form-control"
+                    id="password" type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={this.onChange}
+                    value={this.state.password}
+                    error={errors.password}
+                  />
+                </InputGroup>
+                <span className="red-text">{errors.password}</span>
+            </FormGroup>
+              <div className="form-group form-actions">
+                <Button className="btn btn-sm btn-success" type="submit">Login</Button>
+              </div>
+            </Form>
                   </div>
                   <div className="card-footer">
                   <Link to="/">
