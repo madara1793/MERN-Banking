@@ -1,8 +1,10 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap';
 import { Form, FormGroup, Label, Input} from 'reactstrap';
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
 
-export default function ContactForm() {
+const ContactForm = (props) => {
   return (
     <Row className="my-5">
         <Col md="6">
@@ -24,6 +26,7 @@ export default function ContactForm() {
                             type="text"
                             name="name"
                             id="name"
+                            value={props.auth.user.email}
                         />
                     </Col>
                 </FormGroup>
@@ -56,3 +59,10 @@ export default function ContactForm() {
     </Row>
   )
 }
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+});
+
+export default connect(mapStateToProps, {loginUser})(ContactForm);

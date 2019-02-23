@@ -37,7 +37,7 @@ export default function Account() {
                     <ContactForm/>
                 <Row className="my-5">
                     <Col md="12">
-                        <SaveButton />
+                    <SaveButton />
                     </Col>
                 </Row>
             </Container>
