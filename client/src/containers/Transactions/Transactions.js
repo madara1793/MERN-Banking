@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import Modal from '../../components/Modal/Modal';
+import SingleTransaction from './SingleTransaction';
 import { connect } from 'react-redux';
 import { getTransactions } from '../../actions/transactionsActions';
 import PropTypes from 'prop-types';
@@ -13,7 +13,6 @@ class Transactions extends Component {
     this.props.getTransactions();
   }
   render() {
-      const {transactions} = this.props.transaction;
     return (
       <TransactionsWrapper>
            <div className="header-wrapper">
@@ -45,38 +44,13 @@ class Transactions extends Component {
                         <h4 className="text-white my-3 text-center">History of your transactions</h4>
                     </Col>
                 </Row>
+                <Row>
+                    <Col md="12">
+                        <SingleTransaction/>
+                    </Col>
+                </Row>
             </Container>
-           <div className="container">
-
-                <div className="row">
-
-                </div>
-                <div className="row">
-
-                    <div className="col-md-12">
-                        <div className="card">
-                                <div className="card-body">
-                                <ListGroup>
-                                    {transactions.map(({accountNumber, address, name, reference, amount, _id, date}) => (
-                                        <ListGroupItem key={_id}>
-                                         <p>{name}</p>
-                                         <p>{address}</p>
-                                         <p>{accountNumber}</p>
-                                         <p>{reference}</p>
-                                         <p>{amount}</p>
-                                         <p>{date}</p>
-                                        </ListGroupItem>
-                                    ))}
-                                </ListGroup>
-                                </div>
-                                <div className="card-footer">
-
-                                </div>
-                        </div>
-                    </div>
-                </div>
-           </div>
-      </TransactionsWrapper>
+        </TransactionsWrapper>
     )
   }
 }

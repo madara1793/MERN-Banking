@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { connect } from "react-redux";
 import {getCurrencies} from '../../actions/converterActions';
 import axios from 'axios';
+import { Container, Row, Col } from 'reactstrap';
+import { Form, FormGroup, Input } from 'reactstrap';
 class Converter extends React.Component {
     constructor(props) {
         super(props);
@@ -38,14 +40,14 @@ class Converter extends React.Component {
     render() {
       console.log(this.state.currencies);
       return (
-        <ConverterWrapper className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h1 className="text-white text-center">Currency Converter</h1>
-                        </div>
-                        <div className="col-md-12">
-                            <div className="card">
-                              <div className="card-body mx-auto">
+        <ConverterWrapper>
+            <div className="header-wrapper">
+                 <h6 className="header text-white">Currency Converter</h6>
+            </div>
+            <Container>
+              <Row>
+                <div className="card">
+                <div className="card-body mx-auto">
                                   <form>
                                   <span className="amount text-white">Amount</span>
                                     <div className="form-group">
@@ -83,9 +85,9 @@ class Converter extends React.Component {
                                   {this.state.result && <h3 className="result py-3">{this.state.result}</h3>}
                                   <Button color="primary" size="lg">Convert</Button>
                               </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+              </Row>
+            </Container>
         </ConverterWrapper>
       );
     }
@@ -94,10 +96,26 @@ class Converter extends React.Component {
 
 
 const ConverterWrapper = styled.div`
-
-.card {
-  background-color: #27293d;
-  border: 1px solid #000;
+margin-left: 2rem;
+width: 70rem;
+height: auto;
+background-color: #3a4149;
+border: 1px solid #000;
+.header {
+  text-align: left;
+  font-family: 'Open Sans';
+  padding: 1.3rem 1rem 1rem 1rem;
+}
+.text-white {
+  font-family: Open Sans;
+}
+.header-wrapper {
+  background-color: #343b41;
+  border-bottom: 1px solid #000;
+}
+.horizontal-line {
+  border-bottom: 1px solid #fff;
+  width: 100%;
 }
 `;
 
