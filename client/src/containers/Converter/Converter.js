@@ -46,45 +46,45 @@ class Converter extends React.Component {
             </div>
             <Container>
               <Row>
-                <div className="card">
-                <div className="card-body mx-auto">
-                                  <form>
-                                  <span className="amount text-white">Amount</span>
-                                    <div className="form-group">
-                                    <input
-                                          className="amount-input"
-                                          type="text"
-                                          name="amount"
-                                          value={this.state.amount}
-                                          onChange={(event) => this.setState({
-                                              amount: event.target.value
-                                          })}
-                                      />
-                                    </div>
-                                    <div className="form-group">
-                                    <span className="from text-white">From</span>
-                                        <select
-                                            name="from"
-                                            onChange={(event) => this.handleSelection(event)}
-                                            value={this.state.from}>
-                                            {this.state.currencies.map((cur, i) => (
-                                                <option key={i}>{cur}</option>
-                                            ))}
-                                          </select>
-                                        <span className="to text-white">To</span>
-                                        <select
-                                            name="to"
-                                            onChange={(event) => this.handleSelection(event)}
-                                            value={this.state.to}>
-                                        {this.state.currencies.map((cur, i) => (
-                                            <option key={i}>{cur}</option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                  </form>
-                                  {this.state.result && <h3 className="result py-3">{this.state.result}</h3>}
-                                  <Button color="primary" size="lg">Convert</Button>
-                              </div>
+                <div className="converter mx-auto">
+                  <div className="converter-body">
+                      <Form>
+                        <span className="amount text-white">Amount</span>
+                        <FormGroup>
+                        <Input
+                              className="amount-input"
+                              type="text"
+                              name="amount"
+                              value={this.state.amount}
+                              onChange={(event) => this.setState({
+                                  amount: event.target.value
+                              })}
+                          />
+                        </FormGroup>
+                        <FormGroup>
+                        <span className="from text-white">From</span>
+                            <select
+                                name="from"
+                                onChange={(event) => this.handleSelection(event)}
+                                value={this.state.from}>
+                                {this.state.currencies.map((cur, i) => (
+                                    <option key={i}>{cur}</option>
+                                ))}
+                              </select>
+                            <span className="to text-white">To</span>
+                            <select
+                                name="to"
+                                onChange={(event) => this.handleSelection(event)}
+                                value={this.state.to}>
+                            {this.state.currencies.map((cur, i) => (
+                                <option key={i}>{cur}</option>
+                            ))}
+                          </select>
+                        </FormGroup>
+                        {this.state.result && <h3 className="result py-3">{this.state.result}</h3>}
+                        <Button color="primary" size="lg">Convert</Button>
+                      </Form>
+                  </div>
                 </div>
               </Row>
             </Container>
@@ -113,9 +113,8 @@ border: 1px solid #000;
   background-color: #343b41;
   border-bottom: 1px solid #000;
 }
-.horizontal-line {
-  border-bottom: 1px solid #fff;
-  width: 100%;
+.converter {
+
 }
 `;
 
