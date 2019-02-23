@@ -9,7 +9,6 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Dashboard from '../components/Dashboard/Dashboard';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navigation from '../components/Navigation/Navigation';
-import PageNotFound from '../components/PageNotFound/PageNotFound';
 import Account from '../components/Account/Account';
 import Settings from '../components/Settings/Settings';
 

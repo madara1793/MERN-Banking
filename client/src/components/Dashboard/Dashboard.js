@@ -25,5 +25,6 @@ export default class Dashboard extends Component {
 
 const PanelWrapper = styled.div`
   background-color: #2f353a;
+  height: 130%;
 
 `;

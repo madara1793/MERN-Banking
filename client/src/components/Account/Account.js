@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container, Row, Col } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import SaveIcon from '@material-ui/icons/Save';
+import ContactForm from './ContactForm';
+import NameForm from './NameForm';
+import SaveButton from '../Buttons/SaveButton';
 
 export default function Account() {
   return (
@@ -21,124 +22,22 @@ export default function Account() {
                             <div className="description-wrapper mr-5">
                                 <p className="text-white">Picture</p>
                             </div>
-                            <div className="img-wrapper ml-5">
+                            <figure className="img-wrapper ml-5">
                                 <img className="img-responsive" src="https://via.placeholder.com/150" alt="Profile Pic"/>
-                            </div>
+                            </figure>
                         </div>
                     </Col>
                 </Row>
-                <Row>
-                    <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>First Name</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Last Name</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                    <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Department</Label>
-                                <Col sm={9}>
-                                <Input type="select" name="select" id="select">
-                                    <option>Web Development</option>
-                                    <option>System Development</option>
-                                    <option>Sales</option>
-                                    <option>Human Resources</option>
-                                </Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Occupation</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                </Row>
+                    <NameForm/>
                 <Row>
                     <div className="horizontal-line">
                         <h6 className="header text-white mt-3">Contact information</h6>
                     </div>
                 </Row>
-                <Row className="my-5">
-                    <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Email</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Phone</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                    <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Office location</Label>
-                                <Col sm={9}>
-                                <Input type="select" name="select" id="select">
-                                    <option>London</option>
-                                    <option>Tokyo</option>
-                                    <option>San Francisco</option>
-                                </Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Room</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                </Row>
+                    <ContactForm/>
                 <Row className="my-5">
                     <Col md="12">
-                        <Button color="primary" size="lg">
-                            <SaveIcon className="mr-2" />
-                            Save Changes
-                        </Button>
+                        <SaveButton />
                     </Col>
                 </Row>
             </Container>

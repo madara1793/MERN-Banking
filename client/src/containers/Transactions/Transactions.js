@@ -14,7 +14,7 @@ class Transactions extends Component {
   }
   render() {
     return (
-      <TransactionsWrapper>
+      <TransactionsWrapper className="mb-5">
            <div className="header-wrapper">
                  <h6 className="header text-white">Transactions</h6>
             </div>
@@ -44,7 +44,7 @@ class Transactions extends Component {
                         <h4 className="text-white my-3 text-center">History of your transactions</h4>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="mb-3">
                     <Col md="12">
                         <SingleTransaction/>
                     </Col>

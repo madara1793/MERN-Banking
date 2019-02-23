@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getMessages, addMessage } from '../../actions/messagesActions';
 import PropTypes from 'prop-types';
 
-class MessageForm extends React.Component {
+class MessageForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -78,6 +78,7 @@ class MessageForm extends React.Component {
             </FormGroup>
             <FormGroup>
                 <Input
+                    style={{resize: 'none', height: '8rem'}}
                     type="textarea"
                     name="message"
                     id="message"

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container, Row, Col } from 'reactstrap';
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import Switch from '@material-ui/core/Switch';
-import SaveIcon from '@material-ui/icons/Save';
+import SettingsForm from './SettingsForm';
+import SaveButton from '../Buttons/SaveButton';
 
 export default function Settings() {
   return (
@@ -18,36 +18,7 @@ export default function Settings() {
                         <h6 className="header text-white mt-3">Change Password</h6>
                 </div>
                 </Row>
-                <Row className="my-5">
-                <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Password</Label>
-                                <Col sm={9}>
-                                    <Input
-                                        type="password"
-                                        name="name"
-                                        id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                    <Col md="6">
-                        <Form>
-                            <FormGroup row>
-                            <Label className="text-white" for="name" sm={3}>Confirm Password</Label>
-                                <Col sm={9}>
-                                <Input
-                                    type="password"
-                                    name="name"
-                                    id="name"
-                                    />
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Col>
-                </Row>
+                    <SettingsForm/>
                 <Row>
                 <div className="horizontal-line">
                         <h6 className="header text-white mt-3">Send Email Notifications</h6>
@@ -85,21 +56,17 @@ export default function Settings() {
                                     <p className="text-white">Weekly Reports</p>
                             </div>
                             <div className="toggle-wrapper mx-5 mb-3">
-                                    <Switch color="primary"/>
+                                <Switch color="primary"/>
                             </div>
                     </Col>
                 </Row>
                 <Row className="my-5">
                     <Col md="12">
-                        <Button color="primary" size="lg">
-                            <SaveIcon className="mr-2" />
-                             Save Changes
-                        </Button>
+                        <SaveButton />
                     </Col>
                 </Row>
             </Container>
         </div>
-
     </SettingsWrapper>
   )
 }

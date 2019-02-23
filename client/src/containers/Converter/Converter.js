@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { connect } from "react-redux";
 import {getCurrencies} from '../../actions/converterActions';
 import axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 class Converter extends React.Component {
     constructor(props) {
