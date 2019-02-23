@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { getTransactions } from '../../actions/transactionsActions';
 import PropTypes from 'prop-types';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroupItem } from 'reactstrap';
 class SingleTransaction extends React.Component {
     componentDidMount() {
         this.props.getTransactions();
