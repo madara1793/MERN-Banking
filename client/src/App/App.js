@@ -49,19 +49,19 @@ class App extends Component {
         <BrowserRouter>
           <React.Fragment>
               <Route exact path="/" component={ Landing }/>
-              <Route exact path="/login" component={Login}/>
-              <Route exact path="/register" component={Register}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/register" component={Register}/>
               <div style={{backgroundColor: '#2f353a'}}>
                   <PrivateRoute component={Navigation}/>
                   <div className="d-flex flex-row align-items-start justify-content-start">
                     <PrivateRoute component={Sidebar}/>
                     <Switch>
-                      <PrivateRoute exact path="/dashboard" component={Dashboard}/>
-                      <PrivateRoute exact path="/account" component={Account}/>
-                      <PrivateRoute exact path="/transactions" component={Transactions}/>
-                      <PrivateRoute exact path="/converter" component={Converter}/>
-                      <PrivateRoute exact path="/settings" component={Settings}/>
-                      <PrivateRoute exact path="/messages" component={Messages}/>
+                      <PrivateRoute path="/dashboard" component={Dashboard}/>
+                      <PrivateRoute path="/account" component={Account}/>
+                      <PrivateRoute path="/transactions" component={Transactions}/>
+                      <PrivateRoute path="/converter" component={Converter}/>
+                      <PrivateRoute path="/settings" component={Settings}/>
+                      <PrivateRoute path="/messages" component={Messages}/>
                     </Switch>
                   </div>
               </div>

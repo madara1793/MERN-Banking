@@ -1,43 +1,51 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 export default class Sidebar extends Component {
+
   render() {
     return (
       <SidebarWrapper>
-        <div className="sidebar d-flex flex-column justify-content-start">
-            <ul className="nav-list">
-                <li className="nav-item py-3 px-3">
+        <div className="sidebar">
+              <ListGroup>
+                  <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/dashboard">
-                    <span><i className="fa fa-home mr-2"></i></span>
-                    Dashboard</NavLink>
-                </li>
-                <li className="nav-item py-3 px-3">
+                        <i className="fa fa-home mr-2"></i>
+                        Dashboard
+                    </NavLink>
+                  </ListGroupItem>
+                  <ListGroupItem  className="nav-item">
                     <NavLink className="nav-link" to="/account">
-                    <span><i className="fa fa-user mr-2"></i></span>
-                    Account</NavLink>
-                </li>
-                <li className="nav-item py-3 px-3">
+                        <i className="fa fa-user mr-2"></i>
+                        Account
+                    </NavLink>
+                  </ListGroupItem>
+                  <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/transactions">
-                    <span><i className="fas fa-exchange-alt mr-2"></i></span>
-                    Transactions</NavLink>
-                </li>
-                <li className="nav-item py-3 px-3">
+                      <i className="fas fa-exchange-alt mr-2"></i>
+                      Transactions
+                    </NavLink>
+                  </ListGroupItem>
+                  <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/converter">
-                    <span><i className="fas fa-pound-sign mr-2"></i></span>
-                    Converter</NavLink>
-                </li>
-                <li className="nav-item py-3 px-3">
+                    <i class="fas fa-money-bill-alt mr-2"></i>
+                      Converter
+                    </NavLink>
+                  </ListGroupItem>
+                  <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/settings">
-                    <span><i className="fa fa-cogs mr-2"></i></span>
-                    Settings</NavLink>
-                </li>
-                <li className="nav-item py-3 px-3">
+                      <i className="fa fa-cogs mr-2"></i>
+                      Settings
+                    </NavLink>
+                  </ListGroupItem>
+                  <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/messages">
-                    <span><i className="fa fa-comment mr-2"></i></span>
-                    Messages</NavLink>
-                </li>
-            </ul>
+                      <i className="fa fa-comment mr-2"></i>
+                      Messages
+                    </NavLink>
+                  </ListGroupItem>
+              </ListGroup>
         </div>
 
       </SidebarWrapper>
@@ -46,27 +54,26 @@ export default class Sidebar extends Component {
 }
 
 const SidebarWrapper = styled.div`
-  .sidebar {
-    background-color: #1e8af8;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: flex;
-    top: 0;
-    left: 0;
-    z-index: 6;
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    height: 100%;
-    li {
-      color: #fff;
-      .nav-link {
-        text-decoration: none;
-        color: #fff;
-      }
+.list-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-item {
+  margin: 0;
+  padding: 0;
+  background-color: #000!important;
+  border-bottom: 1px solid #999;
+  .nav-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #999;
+    &:hover {
+      background-color: #fff!important;
+      color: #000!important;
     }
   }
-
+}
+}
 `;
