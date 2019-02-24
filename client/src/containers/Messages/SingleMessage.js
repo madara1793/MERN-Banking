@@ -5,39 +5,45 @@ import PropTypes from 'prop-types';
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
 import styled from 'styled-components';
+import Loader from '../../components/Loader/Loader'
 
 class SingleMessage extends Component {
   componentDidMount() {
         this.props.getMessages();
   }
   render() {
-      const { messages } = this.props.message;
-    return (
-      <AccordionWrapper>
-          <Accordion atomic={true}>
-            {messages.map(({name, _id, email, select, message}) => (
-                <AccordionItem key={_id} title={name}>
-                    <div className="card">
-                        <div className="card-body">
-                           <div className="email d-flex flex-row">
-                                <strong>Email: </strong>
-                                <p className="ml-5">{email}</p>
-                           </div>
-                           <div className="email d-flex flex-row">
-                                <strong>Subject: </strong>
-                                <p style={{marginLeft: '2rem'}}>{select}</p>
-                           </div>
-                           <div className="email d-flex flex-row">
-                                <strong>Message: </strong>
-                                <p className="ml-4">{message}</p>
-                           </div>
-                        </div>
-                    </div>
-                </AccordionItem>
-            ))}
-           </Accordion>
-      </AccordionWrapper>
-    )
+    const { messages } = this.props.message;
+    if(!messages) {
+      return <Loader />;
+    } else {
+      return (
+        <AccordionWrapper>
+            <Accordion atomic={true}>
+              {messages.map(({name, _id, email, select, message}) => (
+                  <AccordionItem key={_id} title={name}>
+                      <div className="card">
+                          <div className="card-body">
+                             <div className="email d-flex flex-row">
+                                  <strong>Email: </strong>
+                                  <p className="ml-5">{email}</p>
+                             </div>
+                             <div className="email d-flex flex-row">
+                                  <strong>Subject: </strong>
+                                  <p style={{marginLeft: '2rem'}}>{select}</p>
+                             </div>
+                             <div className="email d-flex flex-row">
+                                  <strong>Message: </strong>
+                                  <p className="ml-4">{message}</p>
+                             </div>
+                          </div>
+                      </div>
+                  </AccordionItem>
+              ))}
+             </Accordion>
+        </AccordionWrapper>
+      )
+    }
+
   }
 }
 

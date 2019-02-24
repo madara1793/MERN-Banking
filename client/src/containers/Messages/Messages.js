@@ -20,14 +20,6 @@ class Messages extends Component {
                     </Col>
                     <Col md="6">
                        <SingleMessage/>
-                        <Pagination aria-label="Page navigation example">
-                            <PaginationItem>
-                                <PaginationLink />
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink />
-                            </PaginationItem>
-                        </Pagination>
                     </Col>
                 </Row>
             </Container>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Input } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import Modal from '../../components/Modal/Modal';
 import SingleTransaction from './SingleTransaction';
 import { connect } from 'react-redux';
@@ -47,6 +47,14 @@ class Transactions extends Component {
                 <Row className="mb-3">
                     <Col md="12">
                         <SingleTransaction/>
+                          <Pagination aria-label="Page navigation example">
+                            <PaginationItem>
+                                <PaginationLink />
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink />
+                            </PaginationItem>
+                        </Pagination>
                     </Col>
                 </Row>
             </Container>
