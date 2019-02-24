@@ -48,7 +48,7 @@ class Navigation extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto d-flex flex-row justify-content-center align-items-center" navbar>
               <NavItem>
-                    <Search/>
+                  <Search/>
               </NavItem>
               <NavItem>
                   <NotificationDropdown/>

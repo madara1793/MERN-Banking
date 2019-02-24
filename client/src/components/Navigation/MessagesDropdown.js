@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Badge } from 'reactstrap';
-import PropTypes from 'prop-types';
+import { Badge } from 'reactstrap';
+import styled from 'styled-components';
 
 export default class MessagesDropdown extends React.Component {
   constructor(props) {
@@ -19,97 +19,128 @@ export default class MessagesDropdown extends React.Component {
   }
   render() {
     return (
-        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle color="transparent" style={{position: 'relative'}}>
-            <Button color="transparent">
-                <i style={{color: '#fff', position: 'relative'}} className="fa fa-bell"></i>
-                <Badge style={{position: 'absolute', top: '.4rem', right: '1rem'}} color="danger">4</Badge>
-            </Button>
-        </DropdownToggle>
-        <DropdownMenu
-          modifiers={{
-            setMaxHeight: {
-              enabled: true,
-              order: 890,
-              fn: (data) => {
-                return {
-                  ...data,
-                  styles: {
-                    ...data.styles,
-                    overflow: 'auto',
-                    maxHeight: 100,
-                  },
-                };
-              },
-            },
-          }}
-        >
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
+      <DropdownWrapper>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="btn-group pull-right top-head-dropdown">
+              <button style={{position: 'relative'}} type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i style={{color: '#fff'}} className="fa fa-envelope"></i>
+                <Badge style={{position: 'absolute', top: '0', right: '1rem'}} color="info">5</Badge>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <a href="#" class="top-text-block">
+                    <div class="top-text-heading">You have just logged in</div>
+                    <div class="top-text-light">2 minutes ago</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="top-text-block">
+                    <div class="top-text-heading">Password changed</div>
+                    <div class="top-text-light">1 hours ago</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="top-text-block">
+                    <div class="top-text-heading">Profile picture uploaded successfully</div>
+                    <div class="top-text-light">4 hours ago</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="top-text-block">
+                    <div class="top-text-heading">Assets specifications modified in themes</div>
+                    <div class="top-text-light">4 hours ago</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="top-text-block">
+                    <div class="top-text-heading">Weekly report arrived</div>
+                    <div class="top-text-light">5 hours ago</div>
+                  </a>
+                </li>
+                <li>
+                  <div class="loader-topbar"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </DropdownWrapper>
     );
   }
 }
 
-Dropdown.propTypes = {
-    disabled: PropTypes.bool,
-    direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
-    group: PropTypes.bool,
-    isOpen: PropTypes.bool,
-    // For Dropdown usage inside a Nav
-    nav: PropTypes.bool,
-    active: PropTypes.bool,
-    // For Dropdown usage inside a Navbar (disables popper)
-    inNavbar: PropTypes.bool,
-    tag: PropTypes.string, // default: 'div' unless nav=true, then 'li'
-    toggle: PropTypes.func,
-    setActiveFromChild: PropTypes.bool
-};
+const DropdownWrapper = styled.div`
+.top-text-block{
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: inherit !important;
+  border-bottom:1px solid #f4f4f4;
+  position:relative;
+  &:hover {
+        &:before {
+        content: '';
+        width: 4px;
+        background: #f05a1a;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+    }
+  }
+  &.unread {
+    background:#ffc;
 
-DropdownToggle.propTypes = {
-    caret: PropTypes.bool,
-    color: PropTypes.string,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    onClick: PropTypes.func,
-    'data-toggle': PropTypes.string,
-    'aria-haspopup': PropTypes.bool,
-    // For DropdownToggle usage inside a Nav
-    nav: PropTypes.bool,
-    // Defaults to Button component
-    tag: PropTypes.any
-};
+    // &:hover {
+    //   background:#ffd;
+    // }
+  }
 
-DropdownMenu.propTypes = {
-    tag: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    right: PropTypes.bool,
-    flip: PropTypes.bool, // default: true,
-    className: PropTypes.string,
-    cssModule: PropTypes.object,
-    // Custom modifiers that are passed to DropdownMenu.js, see https://popper.js.org/popper-documentation.html#modifiers
-    modifiers: PropTypes.object,
-    persist: PropTypes.bool // presist the popper, even when closed. See #779 for reasoning
-  };
+  .top-text-light {
+    // color:#ccc;
+    color: #999;
+    font-size: 0.8em;
+  }
+}
 
-DropdownItem.propTypes = {
-    children: PropTypes.node,
-    active: PropTypes.bool,
-    disabled: PropTypes.bool,
-    divider: PropTypes.bool,
-    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    header: PropTypes.bool,
-    onClick: PropTypes.func,
-    className: PropTypes.string,
-    cssModule: PropTypes.object,
-    toggle: PropTypes.bool // default: true
-};
+.top-head-dropdown {
+  .dropdown-menu {
+   width: 350px;
+    height:300px;
+    overflow:auto;
+  }
+
+  li:last-child{
+    .top-text-block {
+      border-bottom:0;
+    }
+  }
+}
+.topbar-align-center {
+  text-align: center;
+}
+.loader-topbar {
+  margin: 5px auto;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  border-top: 3px solid #666;
+  width: 22px;
+  height: 22px;
+  -webkit-animation: spin-topbar 1s linear infinite;
+  animation: spin-topbar 1s linear infinite;
+}
+
+@-webkit-keyframes spin-topbar {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin-topbar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+`;

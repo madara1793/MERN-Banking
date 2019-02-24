@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { ListGroup } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink  } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getMessages, addMessage } from '../../actions/messagesActions';
@@ -20,6 +20,14 @@ class Messages extends Component {
                     </Col>
                     <Col md="6">
                        <SingleMessage/>
+                        <Pagination aria-label="Page navigation example">
+                            <PaginationItem>
+                                <PaginationLink />
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink />
+                            </PaginationItem>
+                        </Pagination>
                     </Col>
                 </Row>
             </Container>
