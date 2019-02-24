@@ -8,12 +8,14 @@ import {
     NavItem,
     NavLink,
     Button,
-    Badge  } from 'reactstrap';
+ } from 'reactstrap';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Search from '../Modal/Search';
+import NotificationDropdown from './NotificationDropdown';
+import MessagesDropdown from './MessagesDropdown';
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
@@ -49,16 +51,10 @@ class Navigation extends React.Component {
                     <Search/>
               </NavItem>
               <NavItem>
-                    <Button color="transparent">
-                        <i style={{color: '#fff', position: 'relative'}} className="fa fa-bell"></i>
-                        <Badge style={{position: 'absolute', top: '1rem', right: '14rem'}} color="danger">4</Badge>
-                    </Button>
+                  <NotificationDropdown/>
               </NavItem>
               <NavItem>
-                    <Button color="transparent">
-                        <i style={{color: '#fff'}} className="fa fa-envelope"></i>
-                        <Badge style={{position: 'absolute', top: '1rem', right: '11.5rem'}} color="info">8</Badge>
-                    </Button>
+                   <MessagesDropdown/>
               </NavItem>
               <NavItem>
                 <NavLink href="/account">
@@ -68,7 +64,6 @@ class Navigation extends React.Component {
               <NavItem>
                     <Button color="danger" onClick={this.onLogoutClick}>Logout</Button>
               </NavItem>
-
             </Nav>
           </Collapse>
         </Navbar>

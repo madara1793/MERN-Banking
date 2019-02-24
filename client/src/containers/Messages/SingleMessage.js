@@ -19,15 +19,15 @@ class SingleMessage extends Component {
                 <AccordionItem key={_id} title={name}>
                     <div className="card">
                         <div className="card-body">
-                           <div className="email d-flex flex-row align-content-around">
+                           <div className="email d-flex flex-row">
                                 <strong>Email: </strong>
                                 <p className="ml-5">{email}</p>
                            </div>
-                           <div className="email d-flex flex-row align-content-around">
+                           <div className="email d-flex flex-row">
                                 <strong>Subject: </strong>
                                 <p style={{marginLeft: '2rem'}}>{select}</p>
                            </div>
-                           <div className="email d-flex flex-row align-content-around">
+                           <div className="email d-flex flex-row">
                                 <strong>Message: </strong>
                                 <p className="ml-4">{message}</p>
                            </div>
