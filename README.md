@@ -2,8 +2,8 @@
 
 ## Demo
 
-Login: email@example.com
-Password: qwerty12
+Login: email@example.com <br/>
+Password: qwerty12 <br/>
 [Demo](https://glacial-woodland-93692.herokuapp.com/login)
 
 # What is inside?
