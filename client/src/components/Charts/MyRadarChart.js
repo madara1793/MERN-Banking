@@ -5,22 +5,22 @@ import styled from 'styled-components';
 const MyRadarChart = () => {
     const data = [
         {
-          subject: 'Housing', A: 120, B: 110, fullMark: 100,
+          subject: 'Housing', A: 25, fullMark: 100,
         },
         {
-          subject: 'Transportation', A: 98, B: 130, fullMark: 100,
+          subject: 'Transportation', A: 20, fullMark: 100,
         },
         {
-          subject: 'Food', A: 86, B: 130, fullMark: 100,
+          subject: 'Food', A: 20, fullMark: 100,
         },
         {
-          subject: 'Debt Payments', A: 99, B: 100, fullMark: 100,
+          subject: 'Debt Payments', A: 15, fullMark: 100,
         },
         {
-          subject: 'Savings', A: 85, B: 90, fullMark: 100,
+          subject: 'Savings', A:15, fullMark: 100,
         },
         {
-          subject: 'Personal & Discretionary', A: 65, B: 85, fullMark: 100,
+          subject: 'Personal & Discretionary', A: 15, fullMark: 100,
         },
       ];
   return (
@@ -36,10 +36,7 @@ const MyRadarChart = () => {
                 <PolarRadiusAxis />
                 <Legend
                     verticalAlign="top"
-                    horizontalAlign="left"
-                    height={50}
-                    width={200}
-                    iconSize={20}
+                    height={36}
                     iconType="rect"
                 />
                 <Radar

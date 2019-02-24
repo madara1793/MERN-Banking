@@ -3,10 +3,10 @@ import {PieChart, Pie, Legend, Cell} from 'recharts';
 import styled from 'styled-components';
 
 const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+  { name: 'Salary', value: 600 },
+  { name: 'Freelancing', value: 100 },
+  { name: 'Passive income', value: 200 },
+  { name: 'Rental', value: 100 },
 ];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const RADIAN = Math.PI / 180;
@@ -33,10 +33,7 @@ const MyPieChart = () => {
             <PieChart width={500} height={500}>
                     <Legend
                         verticalAlign="top"
-                        horizontalAlign="left"
-                        height={50}
-                        width={200}
-                        iconSize={20}
+                        height={36}
                         iconType="rect"
                     />
                     <Pie

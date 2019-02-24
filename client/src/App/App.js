@@ -17,11 +17,12 @@ import Transactions from '../containers/Transactions/Transactions';
 import Messages from '../containers/Messages/Messages';
 import store from '../store';
 
+import Layout from '../hoc/Layout/Layout';
+
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
-
-
+import './App.css';
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -50,9 +51,8 @@ class App extends Component {
               <Route exact path="/" component={ Landing }/>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Register}/>
-              <div style={{backgroundColor: '#2f353a'}}>
-                  <PrivateRoute component={Navigation}/>
-                  <div className="d-flex flex-row align-items-start justify-content-start">
+              <PrivateRoute component={Navigation}/>
+                  <Layout>
                     <PrivateRoute component={Sidebar}/>
                     <Switch>
                       <PrivateRoute path="/dashboard" component={Dashboard}/>
@@ -62,8 +62,7 @@ class App extends Component {
                       <PrivateRoute path="/settings" component={Settings}/>
                       <PrivateRoute path="/messages" component={Messages}/>
                     </Switch>
-                  </div>
-              </div>
+                  </Layout>
           </React.Fragment>
         </BrowserRouter>
     );
