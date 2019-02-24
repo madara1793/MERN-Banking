@@ -2,9 +2,9 @@
 
 ## Demo
 
-[Demo](https://glacial-woodland-93692.herokuapp.com/login)
+[Demo](https://glacial-woodland-93692.herokuapp.com/login) <br/>
 Login: email@example.com <br/>
-Password: qwerty12 <br/>
+Password: qwerty12 
 
 # What is inside?
 
