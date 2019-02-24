@@ -16,3 +16,20 @@
 
 ![Panel](screenshots/panel.png?raw=true)
 ![Messages](screenshots/messages.png?raw=true)
+
+# Details
+UI inspired by [coreui.io](https://coreui.io/react/)
+
+## Technologies
+
+* React
+* Redux
+* React Router
+* JWT Tokens
+* Reactstrap
+* Styled components
+* Recharts
+* Passport
+* MongoDB
+* Express
+* Node
