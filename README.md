@@ -15,3 +15,4 @@
 * Form validation
 
 ![Panel](screenshots/panel.png?raw=true)
+![Messages](screenshots/messages.png?raw=true)
