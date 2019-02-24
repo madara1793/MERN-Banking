@@ -1,4 +1,6 @@
+require('dotenv').config();
+
 module.exports = {
-    mongoURI: "mongodb://kamil:polska12@ds157964.mlab.com:57964/users",
-    secretOrKey: "secret"
+    mongoURI: process.env.MONGO_URI,
+    secretOrKey: process.env.SECRET_KEY
 };
