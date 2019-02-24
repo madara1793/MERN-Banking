@@ -19,9 +19,7 @@ class Messages extends Component {
                         <MessagesForm/>
                     </Col>
                     <Col md="6">
-                    <ListGroup>
-                        <SingleMessage/>
-                    </ListGroup>
+                       <SingleMessage/>
                     </Col>
                 </Row>
             </Container>

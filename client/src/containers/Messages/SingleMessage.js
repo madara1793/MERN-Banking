@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { getMessages } from '../../actions/messagesActions';
 import PropTypes from 'prop-types';
-import { ListGroupItem } from 'reactstrap';
-import { Card, CardBody, CardHeader, CardFooter} from 'reactstrap';
+import { Accordion, AccordionItem } from 'react-light-accordion';
+import 'react-light-accordion/demo/css/index.css';
+import styled from 'styled-components';
 
 class SingleMessage extends Component {
   componentDidMount() {
@@ -12,30 +13,38 @@ class SingleMessage extends Component {
   render() {
       const { messages } = this.props.message;
     return (
-      <div>
-           {messages.map(({name, _id, email, select, message}) => (
-                <ListGroupItem key={_id}>
-                    <Card className="card">
-                        <CardHeader>
-                            {name}
-                        </CardHeader>
-                        <CardBody>
-                            <ul>
-                                <li>{message}</li>
-                                <li>{email}</li>
-                                <li>{select}</li>
-                            </ul>
-                        </CardBody>
-                        <CardFooter>
-                            2019/02/21
-                        </CardFooter>
-                    </Card>
-                </ListGroupItem>
-           ))}
-      </div>
+      <AccordionWrapper>
+          <Accordion atomic={true}>
+            {messages.map(({name, _id, email, select, message}) => (
+                <AccordionItem key={_id} title={name}>
+                    <div className="card">
+                        <div className="card-body">
+                           <div className="email d-flex flex-row">
+                                <strong>Email: </strong>
+                                <p className="ml-3">{email}</p>
+                           </div>
+                           <div className="email d-flex flex-row">
+                                <strong>Subject: </strong>
+                                <p className="ml-3">{select}</p>
+                           </div>
+                           <div className="email d-flex flex-row">
+                                <strong>Message: </strong>
+                                <p className="ml-3">{message}</p>
+                           </div>
+                        </div>
+
+                    </div>
+                </AccordionItem>
+            ))}
+           </Accordion>
+      </AccordionWrapper>
     )
   }
 }
+
+const AccordionWrapper = styled.div`
+
+`;
 
 SingleMessage.propTypes = {
     getMessages: PropTypes.func.isRequired,
