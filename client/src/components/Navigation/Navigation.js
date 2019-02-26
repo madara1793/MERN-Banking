@@ -40,9 +40,9 @@ class Navigation extends React.Component {
       <div>
         <Navbar color="dark" dark expand="md">
           <NavbarBrand>
-              <Link className="text-white text-decoration-none text-uppercase" to="/account">
-                {user.name}
-              </Link>
+              <span className="text-white text-uppercase">
+                 {user.name}
+              </span>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

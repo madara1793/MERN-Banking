@@ -53,7 +53,7 @@ const AccordionWrapper = styled.div`
 
 SingleMessage.propTypes = {
     getMessages: PropTypes.func.isRequired,
-    transaction: PropTypes.object.isRequired
+    message: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

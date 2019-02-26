@@ -29,7 +29,7 @@ export default class Sidebar extends Component {
                   </ListGroupItem>
                   <ListGroupItem className="nav-item">
                     <NavLink className="nav-link" to="/converter">
-                    <i class="fas fa-money-bill-alt mr-2"></i>
+                    <i className="fas fa-money-bill-alt mr-2"></i>
                       Converter
                     </NavLink>
                   </ListGroupItem>

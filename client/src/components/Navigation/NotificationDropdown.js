@@ -19,46 +19,46 @@ export default class NotificationDropdown extends React.Component {
   render() {
     return (
       <DropdownWrapper>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="btn-group pull-right top-head-dropdown">
-            <button style={{position: 'relative'}} type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div className="panel panel-default">
+        <div className="panel-body">
+          <div className="btn-group pull-right top-head-dropdown">
+            <button style={{position: 'relative'}} type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i style={{color: '#fff'}} className="fa fa-bell"></i>
               <Badge style={{position: 'absolute', top: '0', right: '1rem'}} color="warning">9</Badge>
             </button>
-            <ul class="dropdown-menu dropdown-menu-right">
+            <ul className="dropdown-menu dropdown-menu-right">
               <li>
-                <a href="#" class="top-text-block">
-                  <div class="top-text-heading">You have just logged in</div>
-                  <div class="top-text-light">2 minutes ago</div>
+                <a href="#" className="top-text-block">
+                  <div className="top-text-heading">You have just logged in</div>
+                  <div className="top-text-light">2 minutes ago</div>
                 </a>
               </li>
               <li>
-                <a href="#" class="top-text-block">
-                  <div class="top-text-heading">Password changed</div>
-                  <div class="top-text-light">1 hours ago</div>
+                <a href="#" className="top-text-block">
+                  <div className="top-text-heading">Password changed</div>
+                  <div className="top-text-light">1 hours ago</div>
+                </a>
+              </li>
+              <li>Name
+                <a href="#" className="top-text-block">
+                  <div className="top-text-heading">Profile picture uploaded successfully</div>
+                  <div className="top-text-light">4 hours ago</div>
                 </a>
               </li>
               <li>
-                <a href="#" class="top-text-block">
-                  <div class="top-text-heading">Profile picture uploaded successfully</div>
-                  <div class="top-text-light">4 hours ago</div>
+                <a href="#" className="top-text-block">
+                  <div className="top-text-heading">Assets specifications modified in themes</div>
+                  <div className="top-text-light">4 hours ago</div>
                 </a>
               </li>
               <li>
-                <a href="#" class="top-text-block">
-                  <div class="top-text-heading">Assets specifications modified in themes</div>
-                  <div class="top-text-light">4 hours ago</div>
+                <a href="#" className="top-text-block">
+                  <div className="top-text-heading">Weekly report arrived</div>
+                  <div className="top-text-light">5 hours ago</div>
                 </a>
               </li>
               <li>
-                <a href="#" class="top-text-block">
-                  <div class="top-text-heading">Weekly report arrived</div>
-                  <div class="top-text-light">5 hours ago</div>
-                </a>
-              </li>
-              <li>
-                <div class="loader-topbar"></div>
+                <div className="loader-topbar"></div>
               </li>
             </ul>
           </div>

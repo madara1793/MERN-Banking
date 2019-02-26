@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { Pagination, PaginationItem, PaginationLink  } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getMessages, addMessage } from '../../actions/messagesActions';
