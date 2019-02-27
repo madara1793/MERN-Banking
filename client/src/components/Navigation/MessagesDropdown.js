@@ -18,6 +18,7 @@ export default class MessagesDropdown extends React.Component {
     }));
   }
   render() {
+    cons
     return (
       <DropdownWrapper>
         <div className="panel panel-default">
@@ -28,35 +29,25 @@ export default class MessagesDropdown extends React.Component {
                 <Badge style={{position: 'absolute', top: '0', right: '1rem'}} color="info">5</Badge>
               </button>
               <ul className="dropdown-menu dropdown-menu-right">
-                <li>
-                  <a href="#" className="top-text-block">
+                <li className="top-text-block">
                     <div className="top-text-heading">You have just logged in</div>
                     <div className="top-text-light">2 minutes ago</div>
-                  </a>
                 </li>
-                <li>
-                  <a href="#" className="top-text-block">
+                <li className="top-text-block">
                     <div className="top-text-heading">Password changed</div>
                     <div className="top-text-light">1 hours ago</div>
-                  </a>
                 </li>
-                <li>
-                  <a href="#" className="top-text-block">
+                <li className="top-text-block">
                     <div className="top-text-heading">Profile picture uploaded successfully</div>
                     <div className="top-text-light">4 hours ago</div>
-                  </a>
                 </li>
-                <li>
-                  <a href="#" className="top-text-block">
+                <li className="top-text-block">
                     <div className="top-text-heading">Assets specifications modified in themes</div>
                     <div className="top-text-light">4 hours ago</div>
-                  </a>
                 </li>
-                <li>
-                  <a href="#" className="top-text-block">
+                <li className="top-text-block">
                     <div className="top-text-heading">Weekly report arrived</div>
                     <div className="top-text-light">5 hours ago</div>
-                  </a>
                 </li>
                 <li>
                   <div className="loader-topbar"></div>
