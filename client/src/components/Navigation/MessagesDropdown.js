@@ -18,7 +18,6 @@ export default class MessagesDropdown extends React.Component {
     }));
   }
   render() {
-    cons
     return (
       <DropdownWrapper>
         <div className="panel panel-default">
