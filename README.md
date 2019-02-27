@@ -2,7 +2,9 @@
 
 ## Demo
 
-[Demo](https://glacial-woodland-93692.herokuapp.com/login) <br/>
+demo wroks only on chrome, trying to fix that<br/>
+
+[Demo](https://glacial-woodland-93692.herokuapp.com/login) <br/> 
 Login: email@example.com <br/>
 Password: qwerty12 
 
