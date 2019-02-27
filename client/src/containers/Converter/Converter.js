@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 class Converter extends React.Component {
   constructor(props) {
       super(props);
