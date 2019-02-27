@@ -11,59 +11,6 @@ class Converter extends React.Component {
            result: null,
            amount: 1
       };
-      this.handleConversion = this.handleConversion.bind(this);
-      this.handleSelection = this.handleSelection.bind(this);
-  }
-  componentDidMount() {
-      axios
-            .get(`https://api.exchangeratesapi.io/latest`)
-            .then(response => {
-              const currencyArr = [];
-              for(const key in response.data.rates) {
-                  currencyArr.push(key);
-              }
-              this.setState({
-                  currencies: currencyArr.sort()
-              })
-            })
-            .catch(err => {
-                  console.log("Opps", err.message);
-            });
-
-  }
-
-  handleConversion() {
-          if(this.state.from !== this.state.to) {
-              axios
-                   .get(`https://api.exchangeratesapi.io/latest?base=${this.state.from}&symbols=${this.state.to}`)
-                   .then(response => {
-                       const result = this.state.amount * (response.data.rates[this.state.to]);
-                       this.setState({
-                           result: result.toFixed(2)
-                       })
-
-                   })
-                   .catch(err => {
-                      console.log("Oops", err);
-                   });
-          } else {
-              this.setState({
-                  result: "You cannot convert the same currency"
-              })
-          }
-
-  }
-  handleSelection(event) {
-      if(event.target.name === 'from') {
-          this.setState({
-              from: event.target.value
-          })
-      }
-      if(event.target.name === 'to') {
-          this.setState({
-              to: event.target.value
-          })
-      }
   }
   render() {
       return (
@@ -75,23 +22,7 @@ class Converter extends React.Component {
                       <form className="form my-5 mx-auto">
                           <div className="form-group">
                               <span className="from text-white">From</span>
-                              <select
-                                  name="from"
-                                  onChange={(event) => this.handleSelection(event)}
-                                  value={this.state.from}>
-                                  {this.state.currencies.map((cur, i) => (
-                                      <option key={i}>{cur}</option>
-                                  ))}
-                                </select>
                               <span className="to text-white">To</span>
-                              <select
-                                  name="to"
-                                  onChange={(event) => this.handleSelection(event)}
-                                  value={this.state.to}>
-                                  {this.state.currencies.map((cur, i) => (
-                                  <option key={i}>{cur}</option>
-                              ))}
-                              </select>
                           </div>
                           <div className="form-group">
                               <label for="amount" className="amount text-white">Amount</label>
@@ -101,13 +32,11 @@ class Converter extends React.Component {
                                   type="text"
                                   name="amount"
                                   value={this.state.amount}
-                                  onChange={(event) => this.setState({
-                                      amount: event.target.value
-                                  })}/>
+                                />
                           </div>
                       </form>
-                      {this.state.result && <h3 className="result">{this.state.result}</h3>}
-                      <button onClick={this.handleConversion} className="btn-lg btn-primary btn-convert mb-5">Convert</button>
+                      <h3 className="result">0</h3>
+                      <button className="btn-lg btn-primary btn-convert mb-5">Convert</button>
               </div>
         </ConverterWrapper>
       );
