@@ -12,7 +12,6 @@ import {
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Search from '../Modal/Search';
 import NotificationDropdown from './NotificationDropdown';
 import MessagesDropdown from './MessagesDropdown';
