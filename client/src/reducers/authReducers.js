@@ -27,4 +27,4 @@ import {
       default:
         return state;
     }
-  }
+}
