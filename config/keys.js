@@ -1,6 +1,6 @@
 require('dotenv').config();
 
 module.exports = {
-    mongoURI: process.env.MONGODB_URI,
+    mongoURI: "mongodb://kamil:polska12@ds147902.mlab.com:47902/heroku_gr1s1ltr",
     secretOrKey: "secret"
 };
