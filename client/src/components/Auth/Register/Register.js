@@ -47,7 +47,6 @@ class Register extends Component {
 
   render() {
       const { errors } = this.state;
-
   return (
         <div className="container">
              <div className="row">
@@ -130,7 +129,6 @@ class Register extends Component {
                             id="password2"
                             type="password"
                             placeholder="Confirm password"
-
                           />
                     </InputGroup>
                   <span className="red-text">{errors.password2}</span>

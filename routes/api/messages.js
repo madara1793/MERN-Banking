@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
 })
 
 
-//  @route    POST api/transactions
-//  @desc     Post a transaction
+//  @route    POST api/messages
+//  @desc     Post a message
 //  @access   private
 router.post('/', (req, res) => {
     const newMessage = new Message({
