@@ -2,9 +2,7 @@
 
 ## Demo
 
-demo wroks only on chrome, trying to fix that<br/>
-
-[Demo](https://glacial-woodland-93692.herokuapp.com/login) <br/> 
+[Demo](https://mern-bank.herokuapp.com/login) <br/> 
 Login: email@example.com <br/>
 Password: qwerty12 
 
